@@ -4,7 +4,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{xcolor}
+
 \usepackage{minted}
+\setminted{fontfamily=tt}
+% Disable italics for comments and configure color of code block text
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\def\FancyVerbFormatLine{\def\baselinestretch{1}\small\color{white}}}
+\AtBeginEnvironment{minted}{\let\itshape\relax}
+
 \usepackage{graphicx}
 \usepackage{tikz}
 
@@ -13,12 +20,12 @@
 
 \usepackage[hmargin=2.54cm, vmargin=2.54cm]{geometry}
 
-% Define custom colours
+% Define custom color
 \definecolor{darkgray}{RGB}{13, 17, 23}
-\definecolor{lightgray}{RGB}{216, 222, 233}
+\definecolor{lightgrey}{RGB}{216, 222, 233}
 
 \pagecolor{darkgray}
-\color{lightgray}
+\color{lightgrey}
 
 \begin{document}
 
@@ -32,7 +39,7 @@
 
     \includegraphics[scale=0.1]{../images/university-of-london-logo.png}\\[1.5cm] 
     {\Large\bfseries University of London}\\[1cm]
-    {\large \today}
+    {\large April 2024}
 
     \vfill
     
@@ -91,5 +98,52 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
         // Various commands available as part of the p5.js library
     }
     \end{minted}
+
+\noindent Example p5.js shape functions used:
+
+\begin{minted}{javascript}
+    // rect syntax
+    rect(x, y, width, height, [tl], [tr], [br], [bl]);
+    /*
+    tl = top-left radius
+    tr = top-right radius
+    br = bottom-right radius
+    bl = bottom-left radius
+    */
+
+    // ellipse syntax
+    ellipse(x, y, width, [height]); // height is optional
+    
+    // point syntax
+    point(x, y);    // point() is a single pixel unless modified with strokeWeight()
+                    // Can only be colored with stroke(), not fill()
+    
+    // triangle syntax
+    triangle(x1, y1, x2, y2, x3, y3);
+
+    // vertex syntax
+    vertex(x, y);   // Can be used to construct complex shapes
+                    // Used exclusively with beginShape() and endShape()
+    // Example:
+    beginShape();   // fill(), stroke() etc. to be used before beginShape() called
+    vertex(x1, y1);  
+    vertex(x2, y2);
+    vertex(x3, y3);
+    endShape();
+
+    // beginShape syntax
+    beginShape([kind]);
+    /*
+    kind = POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP or TESS
+
+    examples shown in p5.js reference documentation
+    */
+
+    \end{minted}
+
+    
+
+
+
 
 \end{document}
