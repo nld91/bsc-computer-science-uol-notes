@@ -35,7 +35,7 @@
     
     {\LARGE\bfseries CM1005 - Introduction to Programming I}\\[0.8cm]
     {\large\bfseries BSc Computer Science}\\[0.5cm] 
-    {\large\textit{Nathan Donovan}}\\[1.5cm] 
+    {\large\textnormal{Nathan Donovan}}\\[1.5cm] 
 
     \includegraphics[scale=0.1]{../images/university-of-london-logo.png}\\[1.5cm] 
     {\Large\bfseries University of London}\\[1cm]
@@ -47,9 +47,8 @@
 
 \newpage
 \section{p5.js - JavaScript Library for Creative Coding}
-Tools used: p5.js, Brackets.io, JavaScript
 
-\subsection*{p5.js}
+\subsection*{Using p5.js}
 \begin{itemize}
     \item Projects / programs must be opened at the folder level in Brackets.io / other IDE for live preview to work.
     \item Work on sketch.js file only. 
@@ -92,17 +91,18 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
 \end{center}
 
 \newpage
+\subsection*{Drawing and Shape Functions}
 \noindent Function used to contain the drawing commands in the sketch:
 \begin{minted}{javascript}
     function draw() {
-        // Various commands available as part of the p5.js library
+        // Various functions available as part of the p5.js library
     }
     \end{minted}
 
 \noindent Example p5.js shape functions used:
 
 \begin{minted}{javascript}
-    // rect syntax
+    // rect() syntax
     rect(x, y, width, height, [tl], [tr], [br], [bl]);
     /*
     tl = top-left radius
@@ -111,17 +111,17 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
     bl = bottom-left radius
     */
 
-    // ellipse syntax
+    // ellipse() syntax
     ellipse(x, y, width, [height]); // height is optional
     
-    // point syntax
+    // point() syntax
     point(x, y);    // point() is a single pixel unless modified with strokeWeight()
                     // Can only be colored with stroke(), not fill()
     
-    // triangle syntax
+    // triangle() syntax
     triangle(x1, y1, x2, y2, x3, y3);
 
-    // vertex syntax
+    // vertex() syntax
     vertex(x, y);   // Can be used to construct complex shapes
                     // Used exclusively with beginShape() and endShape()
     // Example:
@@ -131,7 +131,7 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
     vertex(x3, y3);
     endShape();
 
-    // beginShape syntax
+    // beginShape() syntax
     beginShape([kind]);
     /*
     kind = POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP or TESS
@@ -141,8 +141,24 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
 
     \end{minted}
 
+\newpage
+\subsection*{Colour Functions}
+\noindent Example p5.js color functions used:
     
+\begin{minted}{javascript}
+    // stroke() syntax
+    stroke(red, green, blue, [alpha]); // alpha is optional
+    // red, green, blue and alpha values are between 0 and 255
 
+    // fill() syntax
+    fill(red, green, blue, [alpha]); // alpha is optional
+    // red, green, blue and alpha values are between 0 and 255
+
+    // noFill() syntax
+    noFill();   // Disables fill color for shapes
+
+
+\end{minted}
 
 
 
