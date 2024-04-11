@@ -431,4 +431,524 @@ Convert the following binary numbers to decimal:
     \item \textbf{Answer:} $11111111_2 = 255_{10}$
 \end{enumerate}
 
+\newpage
+
+\paragraph*{3.}
+What is the highest decimal number that can be written in binary form using a maximum of (a) two binary digits, 
+(b) three binary digits, (c) four binary digits, (d) five binary digits? Can you spot a pattern? (e) Write a formula for 
+the highest decimal number that can be written in binary form using $N$ binary digits.
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): Two binary digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in binary form using two binary digits is $11_2$, which is equal to $3_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (b): Three binary digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in binary form using three binary digits is $111_2$, which is equal to $7_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (c): Four binary digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in binary form using four binary digits is $1111_2$, which is equal to $15_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (d): Five binary digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in binary form using five binary digits is $11111_2$, which is equal to $31_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (e): Formula for highest decimal number using $N$ binary digits
+
+\vspace*{0.25cm}
+
+\noindent The pattern observed is that the highest decimal number that can be written in binary form using $N$ binary digits is $2^N - 1$.
+
+\vspace*{0.5cm}
+
+\paragraph {4.}
+Write the decimal number 0.5 in binary.
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solution:}
+
+\vspace*{0.25cm}
+
+\noindent The decimal number 0.5 can be written in binary as $0.1_2$.
+
+\vspace*{0.5cm}
+
+\begin{tikzpicture}
+    \foreach \x/\y/\base/\dec in {0/1/1/0.5, 2/0/2/0.25, 4/0/3/0.125} {
+        % Base value above the square
+        \node at (\x,2.5) {\Large$2^{-\base}$};
+        % Draw the larger square
+        \draw (\x-1,0) rectangle ++(2,2);
+        % Number inside the square
+        \node at (\x,1) {\huge \y};
+        % Decimal value below the square
+        \node at (\x,-0.5) {\Large\dec};
+    }
+    \node at (6,0.9) {\huge $=$};
+    \node at (7.5,1) {\huge $1 \times 2^{-1}$};
+    \node at (6,-0.6) {\Huge $=$};
+    \node at (7,-0.5) {\Huge $0.5$};
+    \node at (-1.5,1) {\Huge .};
+\end{tikzpicture}
+
+\newpage
+
+\subsubsection*{Exercise 14.3:}
+
+\paragraph*{1.}
+Convert the following decimal numbers to octal numbers:
+
+\vspace*{0.25cm}
+
+(a) 971 (b) 2841 (c) 5014 (d) 10000 (e) 17926
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): $971_{10}$
+
+\begin{enumerate}
+    \item $971 \div 8 = 121$ remainder 3
+    \item $121 \div 8 = 15$ remainder 1
+    \item $15 \div 8 = 1$ remainder 7
+    \item $1 \div 8 = 0$ remainder 1
+    \item The octal number is read from the remainders in reverse order: $1733$
+    \item $971_{10} = 1733_8$
+    \item \textbf{Answer:} $971_{10} = 1733_8$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (b): $2841_{10}$
+
+\begin{enumerate}
+    \item $2841 \div 8 = 355$ remainder 1
+    \item $355 \div 8 = 44$ remainder 3
+    \item $44 \div 8 = 5$ remainder 4
+    \item $5 \div 8 = 0$ remainder 5
+    \item The octal number is read from the remainders in reverse order: $5431$
+    \item $2841_{10} = 5431_8$
+    \item \textbf{Answer:} $2841_{10} = 5431_8$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (c): $5014_{10}$
+
+\begin{enumerate}
+    \item $5014 \div 8 = 626$ remainder 6
+    \item $626 \div 8 = 78$ remainder 2
+    \item $78 \div 8 = 9$ remainder 6
+    \item $9 \div 8 = 1$ remainder 1
+    \item $1 \div 8 = 0$ remainder 1
+    \item The octal number is read from the remainders in reverse order: $16126$
+    \item $5014_{10} = 16126_8$
+    \item \textbf{Answer:} $5014_{10} = 16126_8$
+\end{enumerate}
+
+\newpage
+
+\noindent (d): $10000_{10}$
+
+\begin{enumerate}
+    \item $10000 \div 8 = 1250$ remainder 0
+    \item $1250 \div 8 = 156$ remainder 2
+    \item $156 \div 8 = 19$ remainder 4
+    \item $19 \div 8 = 2$ remainder 3
+    \item $2 \div 8 = 0$ remainder 2
+    \item The octal number is read from the remainders in reverse order: $23420$
+    \item $10000_{10} = 23420_8$
+    \item \textbf{Answer:} $10000_{10} = 23420_8$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (e): $17926_{10}$
+
+\begin{enumerate}
+    \item $17926 \div 8 = 2240$ remainder 6
+    \item $2240 \div 8 = 280$ remainder 0
+    \item $280 \div 8 = 35$ remainder 0
+    \item $35 \div 8 = 4$ remainder 3
+    \item $4 \div 8 = 0$ remainder 4
+    \item The octal number is read from the remainders in reverse order: $43006$
+    \item $17926_{10} = 43006_8$
+    \item \textbf{Answer:} $17926_{10} = 43006_8$
+\end{enumerate}
+
+\paragraph*{2.}
+
+Convert the following octal numbers to decimal:
+
+\vspace*{0.25cm}
+
+(a) 73 (b) 1237 (c) 7635 (d) 6677 (e) 67765
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): $73_8$
+
+\begin{enumerate}
+    \item $7 \times 8^1 + 3 \times 8^0$
+    \item $56 + 3 = 59$
+    \item \textbf{Answer:} $73_8 = 59_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (b): $1237_8$
+
+\begin{enumerate}
+    \item $1 \times 8^3 + 2 \times 8^2 + 3 \times 8^1 + 7 \times 8^0$
+    \item $512 + 128 + 24 + 7 = 671$
+    \item \textbf{Answer:} $1237_8 = 671_{10}$
+\end{enumerate}
+
+\newpage
+
+\noindent (c): $7635_8$
+
+\begin{enumerate}
+    \item $7 \times 8^3 + 6 \times 8^2 + 3 \times 8^1 + 5 \times 8^0$
+    \item $3584 + 384 + 24 + 5 = 3997$
+    \item \textbf{Answer:} $7635_8 = 3997_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (d): $6677_8$
+
+\begin{enumerate}
+    \item $6 \times 8^3 + 6 \times 8^2 + 7 \times 8^1 + 7 \times 8^0$
+    \item $3072 + 384 + 56 + 7 = 3519$
+    \item \textbf{Answer:} $6677_8 = 3519_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (e): $67765_8$
+
+\begin{enumerate}
+    \item $6 \times 8^4 + 7 \times 8^3 + 7 \times 8^2 + 6 \times 8^1 + 5 \times 8^0$
+    \item $24576 + 3584 + 448 + 48 + 5 = 28261$
+    \item \textbf{Answer:} $67765_8 = 28261_{10}$
+\end{enumerate}
+
+\paragraph*{3.}
+
+What is the highest decimal number that can be written in octal form using a maximum of 
+
+(a) one digit, (b) two digits, (c) three digits, (d) four digits (e) five digits, (f) $N$ digits?
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): One octal digit
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in octal form using one octal digit is $7_8$, which is equal to $7_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (b): Two octal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in octal form using two octal digits is $77_8$, which is equal to $63_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (c): Three octal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in octal form using three octal digits is $777_8$, which is equal to $511_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (d): Four octal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in octal form using four octal digits is $7777_8$, which is equal to $4095_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (e): Five octal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be written in octal form using five octal digits is $77777_8$, which is equal to $32767_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (f): Formula for highest decimal number using $N$ octal digits
+
+\vspace*{0.25cm}
+
+\noindent The pattern observed is that the highest decimal number that can be written in octal form using $N$ octal digits is $8^N - 1$.
+
+\newpage
+
+\subsubsection*{Exercise 14.4:}
+
+\paragraph*{1.}
+
+Convert the following hexadecimal numbers to decimal:
+
+(a) 91 (b) 6C (c) A1B (d) F9D4 (e) ABCD
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): $91_{16}$
+
+\begin{enumerate}
+    \item $9 \times 16^1 + 1 \times 16^0$
+    \item $144 + 1 = 145$
+    \item \textbf{Answer:} $91_{16} = 145_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (b): $6C_{16}$
+
+\begin{enumerate}
+    \item $6 \times 16^1 + 12 \times 16^0$
+    \item $96 + 12 = 108$
+    \item \textbf{Answer:} $6C_{16} = 108_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (c): $A1B_{16}$
+
+\begin{enumerate}
+    \item $10 \times 16^2 + 1 \times 16^1 + 11 \times 16^0$
+    \item $2560 + 16 + 11 = 2587$
+    \item \textbf{Answer:} $A1B_{16} = 2587_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (d): $F9D4_{16}$
+
+\begin{enumerate}
+    \item $15 \times 16^3 + 9 \times 16^2 + 13 \times 16^1 + 4 \times 16^0$
+    \item $61440 + 2304 + 208 + 4 = 63956$
+    \item \textbf{Answer:} $F9D4_{16} = 63956_{10}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (e): $ABCD_{16}$
+
+\begin{enumerate}
+    \item $10 \times 16^3 + 11 \times 16^2 + 12 \times 16^1 + 13 \times 16^0$
+    \item $40960 + 2816 + 192 + 13 = 43981$
+    \item \textbf{Answer:} $ABCD_{16} = 43981_{10}$
+\end{enumerate}
+
+\newpage
+
+\paragraph*{2.}
+
+Convert the following decimal numbers to hexadecimal:
+
+(a) 160 (b) 396 (c) 5010 (d) 25000 (e) 1000000
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): $160_{10}$
+
+\begin{enumerate}
+    \item $160 \div 16 = 10$ remainder 0
+    \item $10 \div 16 = 0$ remainder 10
+    \item The hexadecimal number is read from the remainders in reverse order: $A0$
+    \item $160_{10} = A0_{16}$
+    \item \textbf{Answer:} $160_{10} = A0_{16}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (b): $396_{10}$
+
+\begin{enumerate}
+    \item $396 \div 16 = 24$ remainder 12
+    \item $24 \div 16 = 1$ remainder 8
+    \item $1 \div 16 = 0$ remainder 1
+    \item The hexadecimal number is read from the remainders in reverse order: $18C$
+    \item $396_{10} = 18C_{16}$
+    \item \textbf{Answer:} $396_{10} = 18C_{16}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (c): $5010_{10}$
+
+\begin{enumerate}
+    \item $5010 \div 16 = 313$ remainder 2
+    \item $313 \div 16 = 19$ remainder 9
+    \item $19 \div 16 = 1$ remainder 3
+    \item $1 \div 16 = 0$ remainder 1
+    \item The hexadecimal number is read from the remainders in reverse order: $1392$
+    \item $5010_{10} = 1392_{16}$
+    \item \textbf{Answer:} $5010_{10} = 1392_{16}$
+\end{enumerate}
+
+\newpage
+
+\noindent (d): $25000_{10}$
+
+\begin{enumerate}
+    \item $25000 \div 16 = 1562$ remainder 8
+    \item $1562 \div 16 = 97$ remainder 10
+    \item $97 \div 16 = 6$ remainder 1
+    \item $6 \div 16 = 0$ remainder 6
+    \item The hexadecimal number is read from the remainders in reverse order: $61A8$
+    \item $25000_{10} = 61A8_{16}$
+    \item \textbf{Answer:} $25000_{10} = 61A8_{16}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (e): $1000000_{10}$
+
+\begin{enumerate}
+    \item $1000000 \div 16 = 62500$ remainder 0
+    \item $62500 \div 16 = 3906$ remainder 4
+    \item $3906 \div 16 = 244$ remainder 2
+    \item $244 \div 16 = 15$ remainder 4
+    \item $15 \div 16 = 0$ remainder 15
+    \item The hexadecimal number is read from the remainders in reverse order: $F4240$
+    \item $1000000_{10} = F4240_{16}$
+    \item \textbf{Answer:} $1000000_{10} = F4240_{16}$
+\end{enumerate}
+
+\paragraph*{3.}
+
+Calculate the highest decimal number that can be represented by a hexadecimal with
+
+(a) one digit, (b) two digits, (c) three digits, (d) four digits, (e) $N$ digits
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): One hexadecimal digit
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be represented by a hexadecimal with one hexadecimal digit is $F_{16}$, which is equal to $15_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (b): Two hexadecimal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be represented by a hexadecimal with two hexadecimal digits is $FF_{16}$, which is equal to $255_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (c): Three hexadecimal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be represented by a hexadecimal with three hexadecimal digits is $FFF_{16}$, which is equal to $4095_{10}$.
+
+\newpage
+
+\noindent (d): Four hexadecimal digits
+
+\vspace*{0.25cm}
+
+\noindent The highest decimal number that can be represented by a hexadecimal with four hexadecimal digits is $FFFF_{16}$, which is equal to $65535_{10}$.
+
+\vspace*{0.5cm}
+
+\noindent (e): $N$ hexadecimal digits
+
+\vspace*{0.25cm}
+
+\noindent The pattern observed is that the highest decimal number that can be represented by a hexadecimal with $N$ hexadecimal digits is $16^N - 1$.
+
+\subsubsection {Challenge Exercise 14:}
+
+\paragraph*{1.}
+
+Convert the following decimal numbers to binary, octal and hexadecimal:
+
+(a) 0.25 (b) 0.75
+
+\vspace*{0.5cm}
+
+\noindent \textbf{Solutions:}
+
+\vspace*{0.25cm}
+
+\noindent (a): $0.25_{10}$
+
+\begin{enumerate}
+    \item Binary: $0.01_2$
+    \item Octal: $0.2_8$
+    \item Hexadecimal: $0.4_{16}$
+    \item \textbf{Answer:} $0.25_{10} = 0.01_2 = 0.2_8 = 0.4_{16}$
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent (b): $0.75_{10}$
+
+\begin{enumerate}
+    \item Binary: $0.11_2$
+    \item Octal: $0.6_8$
+    \item Hexadecimal: $0.C_{16}$
+    \item \textbf{Answer:} $0.75_{10} = 0.11_2 = 0.6_8 = 0.C_{16}$
+\end{enumerate}
+
 \end{document}
