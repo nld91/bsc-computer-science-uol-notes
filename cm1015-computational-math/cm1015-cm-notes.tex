@@ -5,6 +5,7 @@
 \usepackage[english]{babel}
 \usepackage{xcolor}
 \usepackage{multicol}
+\usepackage{ulem}
 
 \usepackage{minted}
 \setminted{fontfamily=tt}
@@ -336,7 +337,7 @@ For example, the number 123 in decimal is calculated as follows:
 \vspace*{0.25cm}
 
 \noindent\fbox{
-\begin{minipage}{0.3\textwidth}
+\parbox[c][4.5cm][t]{0.3\textwidth}{
     \begin{center}
         \textbf{Step 1:}
 
@@ -357,10 +358,9 @@ For example, the number 123 in decimal is calculated as follows:
         write \textcolor{lightblue}{0} into the result row and carry \textcolor{green}{1} to the next left column
 
     \end{center}
-\end{minipage}
-}
+}}
 \noindent\fbox{
-\begin{minipage}{0.3\textwidth}
+\parbox[c][4.5cm][t]{0.3\textwidth}{
     \begin{center}
         \textbf{Step 2:}
 
@@ -381,10 +381,9 @@ For example, the number 123 in decimal is calculated as follows:
         write \textcolor{lightblue}{0} to the results row and carry \textcolor{green}{1} to the next left column
 
     \end{center}
-\end{minipage}
-}
+}}
 \noindent\fbox{
-\begin{minipage}{0.3\textwidth}
+\parbox[c][4.5cm][t]{0.3\textwidth}{
     \begin{center}
         \textbf{Step 3:}
 
@@ -401,12 +400,72 @@ For example, the number 123 in decimal is calculated as follows:
 
         \vspace*{0.25cm}
 
-        \textcolor{red}{1} + \textcolor{red}{1} = \textcolor{lightblue}{10}, write \textcolor{lightblue}{1 0} in the result row
-        \vspace*{0.42cm}
+        \textcolor{red}{1} + \textcolor{red}{1} = \textcolor{lightblue}{10}, write \textcolor{lightblue}{1 0} in the result row.
+        
+        Answer: $1000_2$
 
     \end{center}
-\end{minipage}
-}
+}}
+
+\vspace*{0.5cm}
+
+\subsubsection*{Subtraction}
+
+\noindent Binary subtraction is similar to decimal subtraction, but with the base being 2.
+
+\vspace*{0.25cm}
+
+\noindent Example: $101_2 - 11_2$
+
+\vspace*{0.25cm}
+
+\noindent\fbox{
+\parbox[c][4.5cm][t]{0.46\textwidth}{
+    \begin{center}
+        \textbf{Step 1:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & 1 & 0 & \textcolor{red}{1} \\
+            - & & 1 & \textcolor{red}{1} \\
+            \hline
+            & & & \textcolor{lightblue}{0} \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        \textcolor{red}{1} - \textcolor{red}{1} = \textcolor{lightblue}{0}, 
+        write \textcolor{lightblue}{0} into the result row
+
+    \end{center}
+}}
+\noindent\fbox{
+\parbox[c][4.5cm][t]{0.46\textwidth}{
+    \begin{center}
+        \textbf{Step 2:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & & \textcolor{green}{2} & \\
+            \hline
+            & \sout{1} & \textcolor{red}{0} & 1 \\
+            - & & \textcolor{red}{1} & 1 \\
+            \hline
+            & & \textcolor{lightblue}{1} & 0 \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        If the subtraction cannot be done, borrow \textcolor{green}{2} from the next left column, 
+        \textcolor{green}{2} - \textcolor{red}{1} = \textcolor{lightblue}{1}, write \textcolor{lightblue}{1} in the result row
+
+        Answer: $10_2$
+
+    \end{center}
+}}
+
 
 \newpage
 
