@@ -367,7 +367,7 @@ For example, the number 123 in decimal is calculated as follows:
         \vspace*{0.25cm}
 
         \begin{tabular}{ c c c c c }
-            & 1 & \textcolor{red}{1} & \\
+            & \textcolor{green}{1} & \textcolor{red}{1} & \\
             \hline
             & 1 & \textcolor{red}{0} & 1 \\
             + & & \textcolor{red}{1} & 1 \\
@@ -462,6 +462,90 @@ For example, the number 123 in decimal is calculated as follows:
         \textcolor{green}{2} - \textcolor{red}{1} = \textcolor{lightblue}{1}, write \textcolor{lightblue}{1} in the result row
 
         Answer: $10_2$
+
+    \end{center}
+}}
+
+\newpage
+
+\subsubsection*{Multiplication}
+
+\noindent Binary multiplication is similar to decimal multiplication, but with the base being 2. 
+The general method is to multiply the top number by each digit of the bottom number, starting from the rightmost digit.
+From here we can perform addition to get the final result.
+
+\vspace*{0.25cm}
+
+\noindent Example: $101_2 \times 11_2$
+
+\vspace*{0.25cm}
+
+\noindent\fbox{
+\parbox[c][5.5cm][t]{0.3\textwidth}{
+    \begin{center}
+        \textbf{Step 1:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} \\
+            $\times$ & & 1 & \textcolor{red}{1} \\
+            \hline
+            & \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & \textcolor{lightblue}{1} \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        Multiply the rightmost digit of the bottom number (\textcolor{red}{1}) by the top number (\textcolor{red}{1 0 1}), 
+        write the result in the first row (\textcolor{lightblue}{1 0 1})
+
+    \end{center}
+}}
+\noindent\fbox{
+\parbox[c][5.5cm][t]{0.3\textwidth}{
+    \begin{center}
+        \textbf{Step 2:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} \\
+            $\times$ & & & \textcolor{red}{1} & 1 \\
+            \hline
+            & & \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & \textcolor{lightblue}{1} \\
+            & \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & \textcolor{lightblue}{1} & \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        Multiply the next digit of the bottom number (\textcolor{red}{1}) by the top number (\textcolor{red}{1 0 1}), 
+        write the result in the second row (\textcolor{lightblue}{1 0 1}), 
+        shift the second row one position to the left
+
+    \end{center}
+}}
+\noindent\fbox{
+\parbox[c][5.5cm][t]{0.3\textwidth}{
+    \begin{center}
+        \textbf{Step 3:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c c }
+            & & 1 & 0 & 1 & \\
+            $\times$ & & & \textcolor{red}{1} & 1 \\
+            \hline
+            & & \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & \textcolor{lightblue}{1} \\
+            + & \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & \textcolor{lightblue}{1} & \\
+            \hline
+            & \textcolor{lightblue}{1} & \textcolor{lightblue}{1} & \textcolor{lightblue}{1} & \textcolor{lightblue}{1} \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        Perform addition of the multiplication results rows to get the final answer
+
+        Answer: $1111_2$
 
     \end{center}
 }}
