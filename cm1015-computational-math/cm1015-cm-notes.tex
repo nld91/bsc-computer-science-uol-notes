@@ -211,6 +211,116 @@ For example, the number 123 in decimal is calculated as follows:
 \end{tikzpicture}
 
 \newpage
+
+\subsection*{Non-integer Conversion to Decimal}
+
+\noindent To convert a non-integer number to decimal, the following method can be used:
+
+\begin{enumerate}
+    \item Write the number in the base you are converting from.
+    \item Multiply each digit by the base raised to the power of its position.
+    \item Add the results together to get the integer part of the decimal value.
+    \item Repeat the process for the fractional part of the number.
+\end{enumerate}
+
+\vspace*{0.25cm}
+
+\noindent Formula: $d_n \times b^n + d_{n-1} \times b^{n-1} + \ldots + d_1 \times b^1 + d_0 \times b^0 + d_{-1} \times b^{-1} + d_{-2} \times b^{-2} + \ldots$
+
+\vspace*{0.25cm}
+
+\noindent Where: $d_n$ is the digit at position $n$, $b$ is the base, and $n$ is the position of the digit.
+
+\vspace*{0.25cm}
+
+\noindent Example, shown with above symbols:
+
+\vspace*{0.5cm}
+
+\begin{tikzpicture}
+    \foreach \x/\y/\base/\dec in {0/1/2/4, 2/0/1/2, 4/1/0/1} {
+        % Base value above the square
+        \node at (\x,2.5) {\Large$b^{\base}$};
+        % Draw the larger square
+        \draw (\x-1,0) rectangle ++(2,2);
+        % Number inside the square
+        \node at (\x,1) {\huge $d_{\base}$};
+    }
+
+    \node at (5.5,0.9) {\Huge $.$};
+
+    \foreach \x/\y/\base/\dec in {7/./-1/0.5, 9/1/-2/0.25} {
+        % Base value above the square
+        \node at (\x,2.5) {\Large$b^{\base}$};
+        % Draw the larger square
+        \draw (\x-1,0) rectangle ++(2,2);
+        % Number inside the square
+        \node at (\x,1) {\huge $d_{\base}$};
+    }
+
+    \node at (-1,-2) {\huge $=$};
+    \node at (0.5,-2) {\huge $d_2 \times b^2$};
+    \node at (2,-2) {\huge $+$};
+    \node at (3.5,-2) {\huge $d_1 \times b^1$};
+    \node at (5,-2) {\huge $+$};
+    \node at (6.5,-2) {\huge $d_0 \times b^0$};
+    \node at (-1,-4) {\huge $+$};
+    \node at (1,-4) {\huge $d_{-1} \times b^{-1}$};
+    \node at (3,-4) {\huge $+$};
+    \node at (5,-4) {\huge $d_{-2} \times b^{-2}$};
+
+\end{tikzpicture}
+
+\vspace*{0.5cm}
+
+\noindent Example with base 5 number 234.25, here $b=5$, $d_2=2$, $d_1=3$, $d_0=4$, $d_{-1}=2$, $d_{-2}=5$:
+
+\vspace*{0.5cm}
+
+\begin{tikzpicture}
+    \foreach \x/\y/\base/\dec in {0/2/2/25, 2/3/1/5, 4/4/0/1} {
+        % Base value above the square
+        \node at (\x,2.5) {\Large$5^{\base}$};
+        % Draw the larger square
+        \draw (\x-1,0) rectangle ++(2,2);
+        % Number inside the square
+        \node at (\x,1) {\huge \y};
+        % Decimal value below the square
+        \node at (\x,-0.5) {\Large\dec};
+    }
+
+    \node at (5.5,0.9) {\Huge $.$};
+
+    \foreach \x/\y/\base/\dec in {7/2/-1/0.2, 9/4/-2/0.04} {
+        % Base value above the square
+        \node at (\x,2.5) {\Large$5^{\base}$};
+        % Draw the larger square
+        \draw (\x-1,0) rectangle ++(2,2);
+        % Number inside the square
+        \node at (\x,1) {\huge \y};
+        % Decimal value below the square
+        \node at (\x,-0.5) {\Large\dec};
+    }
+
+    \node at (-1,-2) {\huge $=$};
+    \node at (0.5,-2) {\huge $2 \times 5^2$};
+    \node at (2,-2) {\huge $+$};
+    \node at (3.5,-2) {\huge $3 \times 5^1$};
+    \node at (5,-2) {\huge $+$};
+    \node at (6.5,-2) {\huge $4 \times 5^0$};
+    \node at (-1,-4) {\huge $+$};
+    \node at (1,-4) {\huge $2 \times 5^{-1}$};
+    \node at (3,-4) {\huge $+$};
+    \node at (5,-4) {\huge $4 \times 5^{-2}$};
+
+    \node at (7,-4) {\Huge $=$};
+    \node at (9,-4) {\Huge $69.56$};
+\end{tikzpicture}
+
+
+
+\newpage
+
 \subsection*{Self-assessment Questions from Foundation Maths Book}
 \subsubsection*{Worked Example 14.2} Convert $83_{10}$ to binary.
 
