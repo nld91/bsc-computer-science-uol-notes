@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{xcolor}
+\usepackage{multicol}
 
 \usepackage{minted}
 \setminted{fontfamily=tt}
@@ -23,6 +24,7 @@
 % Define custom color
 \definecolor{darkgray}{RGB}{13, 17, 23}
 \definecolor{lightgrey}{RGB}{216, 222, 233}
+\definecolor{lightblue}{RGB}{140,140,255}
 
 \pagecolor{darkgray}
 \color{lightgrey}
@@ -321,6 +323,93 @@ For example, the number 123 in decimal is calculated as follows:
 
 \newpage
 
+\subsection*{Binary Operations}
+
+\subsubsection*{Addition}
+
+\noindent Binary addition is similar to decimal addition, but with the base being 2.
+
+\vspace*{0.25cm}
+
+\noindent Example: $101_2 + 11_2$
+
+\vspace*{0.25cm}
+
+\noindent\fbox{
+\begin{minipage}{0.3\textwidth}
+    \begin{center}
+        \textbf{Step 1:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & & \textcolor{green}{1} & \\
+            \hline
+            & 1 & 0 & \textcolor{red}{1} \\
+            + & & 1 & \textcolor{red}{1} \\
+            \hline
+            & & & \textcolor{lightblue}{0} \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        \textcolor{red}{1} + \textcolor{red}{1} = \textcolor{green}{1}\textcolor{lightblue}{0}, 
+        write \textcolor{lightblue}{0} into the result row and carry \textcolor{green}{1} to the next left column
+
+    \end{center}
+\end{minipage}
+}
+\noindent\fbox{
+\begin{minipage}{0.3\textwidth}
+    \begin{center}
+        \textbf{Step 2:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & 1 & \textcolor{red}{1} & \\
+            \hline
+            & 1 & \textcolor{red}{0} & 1 \\
+            + & & \textcolor{red}{1} & 1 \\
+            \hline
+            & & \textcolor{lightblue}{0} & 0 \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        \textcolor{red}{1} + \textcolor{red}{0} + \textcolor{red}{1} = \textcolor{green}{1}\textcolor{lightblue}{0}, 
+        write \textcolor{lightblue}{0} to the results row and carry \textcolor{green}{1} to the next left column
+
+    \end{center}
+\end{minipage}
+}
+\noindent\fbox{
+\begin{minipage}{0.3\textwidth}
+    \begin{center}
+        \textbf{Step 3:}
+
+        \vspace*{0.25cm}
+
+        \begin{tabular}{ c c c c c }
+            & \textcolor{red}{1} & 1 & \\
+            \hline
+            & \textcolor{red}{1} & 0 & 1 \\
+            + & & 1 & 1 \\
+            \hline
+            \textcolor{lightblue}{1} & \textcolor{lightblue}{0} & 0 & 0 \\
+        \end{tabular}
+
+        \vspace*{0.25cm}
+
+        \textcolor{red}{1} + \textcolor{red}{1} = \textcolor{lightblue}{10}, write \textcolor{lightblue}{1 0} in the result row
+        \vspace*{0.42cm}
+
+    \end{center}
+\end{minipage}
+}
+
+\newpage
+
 \subsection*{Self-assessment Questions from Foundation Maths Book}
 \subsubsection*{Worked Example 14.2} Convert $83_{10}$ to binary.
 
@@ -400,7 +489,6 @@ Convert the following decimal numbers to binary:
     \item $2 \div 2 = 1$ remainder 0
     \item $1 \div 2 = 0$ remainder 1
     \item The binary number is read from the remainders in reverse order: $10011$
-    \item $19_{10} = 10011_2$
     \item \textbf{Answer:} $19_{10} = 10011_2$
 \end{enumerate}
 
@@ -416,7 +504,6 @@ Convert the following decimal numbers to binary:
     \item $2 \div 2 = 1$ remainder 0
     \item $1 \div 2 = 0$ remainder 1
     \item The binary number is read from the remainders in reverse order: $100100$
-    \item $36_{10} = 100100_2$
     \item \textbf{Answer:} $36_{10} = 100100_2$
 \end{enumerate}
 
@@ -433,7 +520,6 @@ Convert the following decimal numbers to binary:
     \item $3 \div 2 = 1$ remainder 1
     \item $1 \div 2 = 0$ remainder 1
     \item The binary number is read from the remainders in reverse order: $1100100$
-    \item $100_{10} = 1100100_2$
     \item \textbf{Answer:} $100_{10} = 1100100_2$
 \end{enumerate}
 
@@ -453,7 +539,6 @@ Convert the following decimal numbers to binary:
     \item $3 \div 2 = 1$ remainder 1
     \item $1 \div 2 = 0$ remainder 1
     \item The binary number is read from the remainders in reverse order: $1100011100$
-    \item $796_{10} = 1100011100_2$
     \item \textbf{Answer:} $796_{10} = 1100011100_2$
 \end{enumerate}
 
@@ -476,7 +561,6 @@ Convert the following decimal numbers to binary:
     \item $2 \div 2 = 1$ remainder 0
     \item $1 \div 2 = 0$ remainder 1
     \item The binary number is read from the remainders in reverse order: $1001110001000$
-    \item $5000_{10} = 1001110001000_2$
     \item \textbf{Answer:} $5000_{10} = 1001110001000_2$
 \end{enumerate}
 
@@ -650,7 +734,6 @@ Convert the following decimal numbers to octal numbers:
     \item $15 \div 8 = 1$ remainder 7
     \item $1 \div 8 = 0$ remainder 1
     \item The octal number is read from the remainders in reverse order: $1733$
-    \item $971_{10} = 1733_8$
     \item \textbf{Answer:} $971_{10} = 1733_8$
 \end{enumerate}
 
@@ -664,7 +747,6 @@ Convert the following decimal numbers to octal numbers:
     \item $44 \div 8 = 5$ remainder 4
     \item $5 \div 8 = 0$ remainder 5
     \item The octal number is read from the remainders in reverse order: $5431$
-    \item $2841_{10} = 5431_8$
     \item \textbf{Answer:} $2841_{10} = 5431_8$
 \end{enumerate}
 
@@ -679,7 +761,6 @@ Convert the following decimal numbers to octal numbers:
     \item $9 \div 8 = 1$ remainder 1
     \item $1 \div 8 = 0$ remainder 1
     \item The octal number is read from the remainders in reverse order: $16126$
-    \item $5014_{10} = 16126_8$
     \item \textbf{Answer:} $5014_{10} = 16126_8$
 \end{enumerate}
 
@@ -694,7 +775,6 @@ Convert the following decimal numbers to octal numbers:
     \item $19 \div 8 = 2$ remainder 3
     \item $2 \div 8 = 0$ remainder 2
     \item The octal number is read from the remainders in reverse order: $23420$
-    \item $10000_{10} = 23420_8$
     \item \textbf{Answer:} $10000_{10} = 23420_8$
 \end{enumerate}
 
@@ -709,7 +789,6 @@ Convert the following decimal numbers to octal numbers:
     \item $35 \div 8 = 4$ remainder 3
     \item $4 \div 8 = 0$ remainder 4
     \item The octal number is read from the remainders in reverse order: $43006$
-    \item $17926_{10} = 43006_8$
     \item \textbf{Answer:} $17926_{10} = 43006_8$
 \end{enumerate}
 
