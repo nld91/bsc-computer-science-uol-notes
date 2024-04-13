@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
 \usepackage{minted}
 \setminted{fontfamily=tt}
@@ -143,12 +144,27 @@ Origin pixel highlighted in red at (0, 0), example canvas is 20 x 20 pixels.
 
 \newpage
 \subsection*{Colour Functions}
+\subsubsection*{RGB Colour Model}
+\begin{itemize}
+    \item RGB stands for Red, Green, Blue.
+    \item Each colour channel can have a value between 0 and 255.
+    \item The combination of these three colours can produce a wide range of colours.
+    \item The alpha channel can be used to specify the opacity of a colour.
+    \item Total number of colours available is $256^3 = 16,777,216$.
+    \item RapidTables colour picker can be used to find RGB values. Link: \href{https://www.rapidtables.com/web/color/RGB_Color.html}{RapidTables RGB Colour Picker}
+\end{itemize}
+
+\subsubsection*{p5.js Colour Functions}
+
 \noindent Example p5.js color functions used:
     
 \begin{minted}{javascript}
     // stroke() syntax
     stroke(red, green, blue, [alpha]); // alpha is optional
     // red, green, blue and alpha values are between 0 and 255
+
+    // noStroke() syntax
+    noStroke(); // Disables stroke color for shapes
 
     // fill() syntax
     fill(red, green, blue, [alpha]); // alpha is optional
